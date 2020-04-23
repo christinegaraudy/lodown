@@ -19,9 +19,9 @@ module.exports.identity = identity;
 /**
  *typeOf: accepts any value and returns its datatype as a string
  * 
- * @param {Value} value: input value can be any datatype
+ * @param {Value} input: input value can be any datatype
  * 
- * @return {String}: returns the datatype of the input value as a string 
+ * @return {String}: string: returns the datatype of the input value as a string 
  * 
  */
 
@@ -53,10 +53,10 @@ module.exports.typeOf = typeOf;
  * edge cases if the first input is not an array, if the number given is negative, or
  * if the number given is larger than the length of the array
  * 
- * @param {Array}: collection from which the function will return elements
- * @param {Number}: provides the amount of array elements to return
+ * @param {Array}: array: collection from which the function will return elements
+ * @param {Number}:number: provides the amount of array elements to return
  * 
- * @return: first <number> items of array, or an empty array literal if array is not an
+ * @return: an array. first <number> items of array, or an empty array literal if array is not an
  * array, or the entire array if the number is larger than length of array provided
  */ 
  
@@ -84,15 +84,15 @@ function first(array, number) {
 module.exports.first = first;
 
 /**
- * first: checks to see if array argument is in fact an array, and if it is, returns 
+ * last: checks to see if array argument is in fact an array, and if it is, returns 
  * the last <number> of items in that array, based on the number argument. checks for
  * edge cases if the last input is not an array, if the number given is negative, or
  * if the number given is larger than the length of the array
  * 
- * @param {Array}: collection from which the function will return elements
- * @param {Number}: provides the amount of array elements to return
+ * @param {Array}: array: collection from which the function will return elements
+ * @param {Number}: number: provides the amount of array elements to return
  * 
- * @return: last <number> items of array, or an empty array literal if array is not an
+ * @return: an array. last <number> items of array, or an empty array literal if array is not an
  * array, or the entire array if the number is larger than length of array provided
  */ 
  
@@ -118,10 +118,10 @@ module.exports.last = last;
  * input value. If a match is found, the loop is exited and the index of first match is returned.
  * If a match is never found, -1 is returned.
  * 
- * @param {Array}: an array, a zero-indexed collection
- * @param {Value}: accepts any value
+ * @param {Array}: array: an array, a zero-indexed collection
+ * @param {Value}: value: accepts any value
  * 
- * @return a number which indicates the index wherein the first array item matching the input value 
+ * @return number. a number which indicates the index wherein the first array item matching the input value 
  * can be found, or the number -1 if no match is found.
  */
  
@@ -143,10 +143,10 @@ module.exports.indexOf = indexOf;
  * contains: accepts an array and a value. returns true if that array contains the given value.
  * returns false if it does not. must use a ternary operator.
  * 
- * @param {Array}: a zero-indexed collection of elements
- * @param {Value}: accepts any value
+ * @param {Array}: array: a zero-indexed collection of elements
+ * @param {Value}: value: ccepts any value
  * 
- * @return {Boolean}: true or false depending on whether the array contains the value given
+ * @return {Boolean}: boolean: true or false depending on whether the array contains the value given
  */
  
 function contains(array, value) { //accepts an array and a value
@@ -158,10 +158,10 @@ module.exports.contains = contains;
 
 /**
  * each: Designed to loop over a collection, Array or Object, and applies the 
- * action Function to each value in the collection.
+ * action Function to each value in the collection. alters original array.
  * 
  * @param {Array or Object} collection: The collection over which to iterate.
- * @param {Function} action: The Function to be applied to each value in the 
+ * @param {Function} func: The Function to be applied to each value in the 
  * collection
  */
 
@@ -185,9 +185,9 @@ module.exports.each = each;
  * unique: takes in an array and removes any duplicate elements, returning a new array
  * with duplicates removed
  * 
- * @param {Array}: the zero-indexed collection from which to remove duplicate elements
+ * @param {Array}: array: the zero-indexed collection from which to remove duplicate elements
  * 
- * @return {Array}: a new array with duplicate elements removed
+ * @return {Array}: array: a new array with duplicate elements removed
  * 
  */
  
@@ -211,11 +211,11 @@ module.exports.unique = unique;
  * returns an array of only those elements that, when passed to function as arguments, 
  * evaluated to true
  * 
- * @param: {Array}: zero-indexed list over which to iterate and whose elements to
+ * @param: {Array}: array: zero-indexed list over which to iterate and whose elements to
  * apply to function one by one
- * @param: {Function}: to pass array elements to for testing
+ * @param: {Function}: func: to pass array elements to for testing
  * 
- * @return: {Array}: returns an array of those elements which, when passed to function
+ * @return: {Array}: array: returns an array of those elements which, when passed to function
  * as arguments, evaluated to true
  * 
  */
@@ -239,8 +239,8 @@ module.exports.filter = filter;
  * reject: accepts an array and a function. it returns an array of the elements that, 
  * when passed to input function, evaluate to false
  * 
- * @param: {Array}: an array whose elements will be tested by input function
- * @param: {Function}: will test each element in input array
+ * @param: {Array}: array: n array whose elements will be tested by input function
+ * @param: {Function}: func: will test each element in input array
  * 
  * @return: {Array}: returns a new array of the elements 
  */
@@ -258,8 +258,8 @@ module.exports.reject = reject;
  * then pushes truthy elements into one and falsy into another. returns both as two
  * arrays separated by a comma
  * 
- * @param: {Array}: accepts an input array to test with function
- * @param: {Function}: accepts a function with which to test array elements
+ * @param: {Array}: array: accepts an input array to test with function
+ * @param: {Function}: func: accepts a function with which to test array elements
  * 
  * @result: {Array}: one array containing two arrays, one with truthy values, the
  * other with falsy values
@@ -294,8 +294,8 @@ module.exports.partition = partition;
  * pass as arguments to input function each value, its key, and the whole collection. save the 
  * return value of each function call in a new array and return that array.
  * 
- * @param: {Collection}: either an object or array, a collection of data
- * @param: {Function}: will pass information to each element or value in collection
+ * @param: {Array of Object}: collection: either an object or array, a collection of data
+ * @param: {Function}: func: will pass information to each element or value in collection
  * 
  * @result: 
  */
@@ -323,8 +323,8 @@ module.exports.map = map;
  * pluck: uses map function above to return an array containing the value of 
  * input property for every element in input array
  * 
- * @param: {Array}:
- * @param: {Property}:
+ * @param: {Array}: array: a zero-indexed list over which function will iterate
+ * @param: {String}: property: name of a property whose values will be returned 
  */
  
 function pluck(array, property){ //accepts array and property parameters
@@ -342,11 +342,11 @@ module.exports.pluck = pluck;
  * the given function  to every element or property in the collection.  
  * if every element is true, it returns true.  if any element is false, it returns false.
  * 
- * @param: {Collection}: array or object whose elements or properties to test with input function
- * @param: {Function}: will be applied to every element or property
+ * @param: {Array or Object}: collection: whose elements or properties to test with input function
+ * @param: {Function}: func: will be applied to every element or property
  * 
- * @return: {Boolean}: true if all elements/properties evaluate to true. false if any element or 
- * property evaluates to false.
+ * @return: {Boolean}: boolean: true if all elements/properties evaluate to true. false if any element or 
+ * property evaluates to false. if no function provided, and no elements are falsy, return true
  */
  
 function every(collection, func){ //takes in a collection and a function
@@ -387,11 +387,11 @@ module.exports.every = every;
  * the given function  to every element or property in the collection.  
  * if every element is false, it returns false.  if any element is true, it returns true.
  * 
- * @param: {Collection}: array or object whose elements or properties to test with input function
- * @param: {Function}: will be applied to every element or property
+ * @param: {Array or Object}: collection: whose elements or properties to test with input function
+ * @param: {Function}: func: will be applied to every element or property
  * 
  * @return: {Boolean}: false if all elements/properties evaluate to false. true if any element or 
- * property evaluates to true.
+ * property evaluates to true. If no function is provided, return true if at least one element is truthy, otherwise return false
  */
  
 function some(collection, func){ //takes in a collection and a function
@@ -434,11 +434,11 @@ module.exports.some = some;
 * result for the current one.  If no seed is given, use the first index of the given array for
 * the seed. After the last iteration, return the return value of the final function call.
 * 
-* @param: {Array}: a zero-indexed collection 
-* @param: {Function}: a function to apply to every element in input array
-* @param: {Value}: seed. any datatype. tells loop where to start and then keeps track of iterations.
+* @param: {Array}: array: a zero-indexed collection 
+* @param: {Function}: func: a function to apply to every element in input array
+* @param: {Value}: seed: any datatype. tells loop where to start and then keeps track of iterations.
 * 
-* @result: the return value of the final function call
+* @result: {Value}: any datatype. a single value that is the result of the reduction. the return value of the final function call
 * 
  */
  
@@ -477,4 +477,4 @@ function extend(object1, object2, ...objects){ //accepts any number of object pa
     return result; //return new object, which contains all object properties
 }
 
-module.extend.pluck = extend;
+module.exports.extend = extend;
